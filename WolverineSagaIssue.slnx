@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="ReproIntegrationTests/ReproIntegrationTests.csproj" />
+  <Project Path="WolverineSagaIssue/WolverineSagaIssue.csproj" />
+</Solution>
