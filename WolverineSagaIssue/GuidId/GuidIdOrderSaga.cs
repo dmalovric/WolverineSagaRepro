@@ -8,8 +8,6 @@ public record OrderEmailSent(Guid Id);
 
 // Somewhat contrived example of a saga that processes an order, but also needs to persist locally to keep track of processing state
 
-public record OrderCompleted(Guid Id);
-
 public class GuidIdOrderSaga : Saga
 {
     public Guid? Id { get; set; }
@@ -28,11 +26,6 @@ public class GuidIdOrderSaga : Saga
                 message.Description
             )            
         );
-    }
-
-    public void Handles(OrderCompleted message)
-    {
-        MarkCompleted();
     }
 
     public async Task<OrderPersisted> Handles(PersistOrder order, IRepository repository)
